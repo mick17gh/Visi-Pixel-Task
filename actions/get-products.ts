@@ -8,7 +8,7 @@ export const getProducts = async (): Promise<Product[]> => {
 }
 
 export const getProductBySlug = async (slug: string): Promise<Product | null> => {
-    const res = await fetch(`${baseUrl}/slug/${slug}`, { cache: 'no-store' });
+    const res = await fetch(`${baseUrl}/detail/${slug}`, { cache: 'no-store' });
     if (!res.ok) {
         return null;
     }
