@@ -29,7 +29,7 @@ export class ProductsController {
     }
   }
 
-  @Get('slug/:slug')
+  @Get('detail/:slug')
   getProductBySlug(@Param('slug') slug: string) {
     try {
       return this.productsService.getProductBySlug(slug);
