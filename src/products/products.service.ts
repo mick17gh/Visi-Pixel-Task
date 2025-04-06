@@ -33,6 +33,9 @@ export class ProductsService {
     const product = await this.db.product.create({
       data: { ...createProductDto, slug: generateSlug(createProductDto.name) },
     });
+    if (!product) {
+      throw new Error('Failed to create product');
+    }
     return product;
   }
 }
